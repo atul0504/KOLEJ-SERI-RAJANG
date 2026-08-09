@@ -34,51 +34,127 @@ nav a:hover {
     transform: translateY(-3px);
 }
 .banner {
-    height: 700px;
-    background-image: url("banner.png");
+    min-height: 100vh;
+    background-image:
+        linear-gradient(
+            rgba(100, 0, 20, 0.55),
+            rgba(100, 0, 20, 0.55)
+        ),
+        url("banner2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
-}
-
-.banner p {
-    font-size: 40px;
-    margin: 0;
+    position: relative;
+    overflow: hidden;
 }
 .banner h1 {
-    font-size: 60px;
-    margin: 0px;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 100px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+
+    text-shadow: 4px 5px 8px rgba(0,0,0,0.5);
+
+    animation: titleAppear 1.5s ease;
 }
-.banner button {
+@keyframes titleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.banner-content {
+    text-align: center;
+    color: white;
+
+    animation: heroText 1.2s ease;
+}
+
+.welcome {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 0 0 10px;
+}
+
+.banner-content h1 {
+    font-size: 90px;
+    margin: 0;
+
+    text-transform: uppercase;
+
+    text-shadow: 5px 6px 12px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 30px;
+}
+.banner-button {
+    display: inline-block;
+
     background-color: #8B0000;
     color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
+
+    text-decoration: none;
+
+    padding: 15px 35px;
     border-radius: 30px;
+
+    font-weight: bold;
+
     transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-.banner button:hover {
-    background-color: #ffe5e5;
-    color: #8B0000;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+
+.banner-button:hover {
+    background-color: #b30000;
+    transform: translateY(-5px) scale(1.05);
+}
+/* ANIMATION BANNER */
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .complaint {
     padding: 50px 10%;
     background-color: #ffe5e5;
     text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 .complaint h2 {
-    color: #b30000;
-    font-size: 30px;
+    color: #8B0000;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.complaint.show {
+    opacity: 1;
+    transform: translateY(0);
+};
+
+.complaint h2 {
+    color: #8B0000;
+    font-size: 36px;
+    font-weight: 800;
 }
 .complaint form {
     max-width: 450px;
@@ -88,9 +164,8 @@ nav a:hover {
     text-align: left;
 }
 .complaint label {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    color: #8B0000;
+    font-weight: 700;
 }
 .complaint input,
 .complaint select,
@@ -115,10 +190,20 @@ nav a:hover {
 .complaint button:hover {
     background-color: #800000;
 }
+
 .address {
     padding: 60px 10%;
     text-align: center;
     background-color: #ffe5e5;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.address.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 .address h2 {
     color: #b30000;
@@ -140,8 +225,17 @@ nav a:hover {
 .introduction {
     padding: 70px 10%;
     text-align: center;
+    scroll-margin-top: 80px;
+
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.introduction.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 .introduction h2 {
     color: #b30000;
     font-size: 35px;
@@ -172,13 +266,15 @@ nav a:hover {
 .video-container {
     max-width: 800px;
     margin: 0 auto;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.video-container video {
-    width: 100%;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.video-container.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 .explore-button {
     background-color: #b30000;
@@ -196,8 +292,14 @@ nav a:hover {
     padding: 60px 10%;
     text-align: center;
     background-color: #ffe5e5;
+    opacity: 0;
+transform: translateY(50px);
+transition: opacity 1s ease, transform 1s ease;
 }
-
+.social-media.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 .social-media h2 {
     color: #b30000;
     font-size: 35px;
@@ -328,12 +430,22 @@ nav a:hover {
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(139, 0, 0, 0.15);
-    transition: 0.3s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
     border: 3px solid #ffe0e0;
+
+    /* 🌷 Mula-mula tersembunyi */
+    opacity: 0;
+    transform: translateY(70px);
 }
+
+.activity-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .activity-card:hover {
-    transform: translateY(-10px) rotate(-1deg);
-    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.25);
+    transform: translateY(-12px) rotate(-1deg) scale(1.02);
+    box-shadow: 0 18px 35px rgba(139, 0, 0, 0.25);
 }
 
 /* GAMBAR */
@@ -376,4 +488,180 @@ nav a:hover {
 
     font-size: 13px;
     font-weight: bold;
+}
+/* ✨ Banner Animation */
+.banner {
+    animation: bannerAppear 1.2s ease;
+}
+@keyframes bannerAppear {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* 🌷 Introduction animation */
+.introduction {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+.introduction.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 👥 MPK animation */
+.mpk {
+    padding: 60px 10%;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mpk.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* LOGO ATAS BANNER */
+.banner .top-logo {
+    width: 550px !important;
+    max-width: 75% !important;
+    height: auto !important;
+    object-fit: contain !important;
+
+    display: block;
+    margin: -50px auto 20px;
+
+    position: relative;
+    z-index: 10;
+
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+
+    animation: logoAppear 1.2s ease;
+}
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== TAJUK CANVA STYLE ===== */
+
+.banner-content {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.welcome {
+    font-family: Arial, sans-serif;
+    font-size: 55px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 5px;
+    margin: 0 0 10px;
+}
+
+/* KAWASAN TAJUK */
+
+.title-area {
+    position: relative;
+    display: inline-block;
+}
+
+/* KOLEJ SRI */
+
+.kolej {
+    display: block;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 150px;
+    font-weight: 500;
+    color: #fff0e8;
+
+    text-shadow:
+        5px 5px 0 #111,
+        8px 10px 12px rgba(0,0,0,0.5);
+
+    line-height: 0.8;
+}
+
+/* RAJANG */
+
+.rajang {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 150px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: white;
+
+    text-shadow:
+        5px 5px 0 #111,
+        8px 10px 15px rgba(0,0,0,0.5);
+
+    line-height: 0.9;
+}
+
+/* AYAT BAWAH */
+
+.tagline {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+
+    margin: 25px 0;
+}
+/* ===== LOGO KSR ===== */
+
+.ksr-logo {
+    position: absolute;
+
+    right: -170px;
+    top: 80px;
+
+    width: 130px;
+    height: 130px;
+
+    background: #b30000;
+
+    border: 6px solid white;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotate(5deg);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.5);
+
+    z-index: 10;
+}
+
+.ksr-logo {
+    position: absolute;
+    right: -170px;
+    top: 70px;
+
+    width: 140px !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+
+    z-index: 10;
 }
