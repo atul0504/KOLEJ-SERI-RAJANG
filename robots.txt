@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atul0504.github.io/KOLEJ-SERI-RAJANG/sitemap.xml
