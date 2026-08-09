@@ -17,9 +17,26 @@
         <a href="#social-media">Social Media</a>
     </nav>
     <section id="home" class="banner">
-    <button onclick="location.href='#introduction'">
-    Explore More
-</button>
+   <div class="banner-content">
+     <img src="logo-upm.png" class="top-logo" alt="Logo UPM Kolej Sri Rajang">
+     <img src="logo-ksr.png" class="ksr-logo" alt="Logo KSR">
+    <p class="welcome">WELCOME TO</p>
+    <div class="title-area">
+           <h1 class="title">
+            <span class="kolej">Kolej </span>
+            <span class="rajang">SERI RAJANG</span>
+        </h1>
+
+    </div>
+
+    <p class="tagline">Come dive into KSR, UPMS</p>
+
+    <a href="#introduction" class="banner-button">
+        Explore More →
+    </a>
+
+</div>
+
 </section>
     <section id="introduction" class="introduction">
         <h2>Pengenalan KSR</h2>
@@ -165,10 +182,129 @@
         <span>Facebook</span>
     </a>
     </div>
-
 </section>
 <p class="copyright">
         © Naemah><.DP260323
     </p>
+   <script>
+const introduction = document.querySelector(".introduction");
+
+function showIntroduction() {
+    const position = introduction.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        introduction.classList.add("show");
+    }
+}
+
+window.addEventListener("scroll", showIntroduction);
+window.addEventListener("load", showIntroduction);
+document.querySelector('a[href="#introduction"]').addEventListener("click", function() {
+
+    setTimeout(function() {
+        introduction.classList.add("show");
+    }, 300);
+
+});
+</script>
+<script>
+const mpk = document.querySelector(".mpk");
+function showMPK() {
+    const position = mpk.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        mpk.classList.add("show");
+    }
+}
+
+window.addEventListener("scroll", showMPK);
+window.addEventListener("load", showMPK);
+</script>
+<script>
+const activityCards = document.querySelectorAll(".activity-card");
+function showActivities() {
+    activityCards.forEach(function(card) {
+        const position = card.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 100) {
+            card.classList.add("show");
+        }
+    });
+
+}
+window.addEventListener("scroll", showActivities);
+window.addEventListener("load", showActivities);
+</script>
+<script>
+const videoContainer = document.querySelector(".video-container");
+
+function showVideo() {
+
+    const position = videoContainer.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        videoContainer.classList.add("show");
+    }
+
+}
+
+window.addEventListener("scroll", showVideo);
+window.addEventListener("load", showVideo);
+</script>
+<script>
+const complaint = document.querySelector(".complaint");
+
+function showComplaint() {
+
+    const position = complaint.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        complaint.classList.add("show");
+    }
+
+}
+
+window.addEventListener("scroll", showComplaint);
+window.addEventListener("load", showComplaint);
+</script>
+<script>
+const address = document.querySelector(".address");
+
+function showAddress() {
+
+    const position = address.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        address.classList.add("show");
+    }
+
+}
+
+window.addEventListener("scroll", showAddress);
+window.addEventListener("load", showAddress);
+</script>
+<script>
+const socialMedia = document.querySelector(".social-media");
+
+function showSocialMedia() {
+
+    const position = socialMedia.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        socialMedia.classList.add("show");
+    }
+
+}
+
+window.addEventListener("scroll", showSocialMedia);
+window.addEventListener("load", showSocialMedia);
+</script>
 </body>
 </html>
