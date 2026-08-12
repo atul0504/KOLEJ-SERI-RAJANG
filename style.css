@@ -628,40 +628,461 @@ transition: opacity 1s ease, transform 1s ease;
 
 .ksr-logo {
     position: absolute;
+    right: 40px;
+    top: 120px;
 
-    right: -170px;
-    top: 80px;
+    width: 250px;
+    height: auto;
 
-    width: 130px;
-    height: 130px;
+    object-fit: contain;
 
-    background: #b30000;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 
-    border: 6px solid white;
-    border-radius: 50%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    transform: rotate(5deg);
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: none;
+    transform: none;
 
     z-index: 10;
 }
+/* =========================
+   VISI & MISI - FORMAL
+========================= */
 
-.ksr-logo {
-    position: absolute;
-    right: -170px;
-    top: 70px;
+.vision-mission {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+}
 
-    width: 140px !important;
+.info-box {
+    position: relative;
+    width: 380px;
+    padding: 35px 30px;
+
+    background: #ffffff;
+    border: 1px solid #ead1d1;
+    border-top: 5px solid #8B0000;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 22px rgba(139, 0, 0, 0.10);
+
+    text-align: center;
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* Hover yang subtle */
+
+.info-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(139, 0, 0, 0.16);
+}
+
+/* Icon */
+
+.info-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff5f5;
+    border: 2px solid #b30000;
+    border-radius: 50%;
+
+    font-size: 26px;
+}
+
+/* Tajuk */
+
+.info-box h3 {
+    color: #8B0000;
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin: 0 0 15px;
+}
+
+/* Isi */
+
+.info-box p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* ==========================================
+   FINAL BANNER - CANVA REFERENCE
+========================================== */
+
+.banner {
+    position: relative !important;
+    width: 100% !important;
+    height: calc(100vh - 70px) !important;
+    min-height: 650px !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+/* CONTENT */
+
+.banner-content {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+}
+
+
+/* ==========================================
+   LOGO UPM
+   → TENGAH ATAS
+========================================== */
+
+.banner .top-logo {
+    position: absolute !important;
+
+    top: 12px !important;
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 500px !important;
+    max-width: 42vw !important;
     height: auto !important;
+
+    margin: 0 !important;
+
+    z-index: 20 !important;
+}
+
+
+/* ==========================================
+   WELCOME TO
+========================================== */
+
+.banner .welcome {
+    position: absolute !important;
+
+    top: 125px !important;
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    margin: 0 !important;
+
+    color: white !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: clamp(38px, 4vw, 60px) !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 4px !important;
+
+    white-space: nowrap !important;
+
+    text-shadow:
+        3px 4px 5px rgba(0,0,0,0.55) !important;
+
+    z-index: 15 !important;
+}
+
+
+/* ==========================================
+   TITLE AREA
+========================================== */
+
+.banner .title-area {
+    position: absolute !important;
+
+    top: 215px !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    transform: none !important;
+
+    margin: 0 !important;
+
+    z-index: 10 !important;
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.banner .title {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+
+    line-height: 0.85 !important;
+}
+
+
+/* ==========================================
+   KOLEJ SRI
+========================================== */
+
+.banner .kolej {
+    display: block !important;
+
+    position: relative !important;
+
+    margin: 0 !important;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive !important;
+
+    font-size: clamp(95px, 12vw, 180px) !important;
+
+    font-weight: 500 !important;
+
+    font-style: italic !important;
+
+    color: #fff4e8 !important;
+
+    letter-spacing: -6px !important;
+
+    white-space: nowrap !important;
+
+    transform: translateX(-70px) !important;
+
+    text-shadow:
+        5px 6px 0 #000,
+        8px 10px 12px rgba(0,0,0,0.55) !important;
+
+    z-index: 12 !important;
+}
+
+
+/* ==========================================
+   RAJANG
+========================================== */
+
+.banner .rajang {
+    display: block !important;
+
+    position: relative !important;
+
+    margin: -5px 0 0 0 !important;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif !important;
+
+    font-size: clamp(90px, 11vw, 170px) !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: 3px !important;
+
+    color: white !important;
+
+    white-space: nowrap !important;
+
+    transform: translateX(70px) !important;
+
+    text-shadow:
+        6px 7px 0 #000,
+        9px 11px 13px rgba(0,0,0,0.55) !important;
+
+    z-index: 11 !important;
+}
+
+
+/* ==========================================
+   KSR LOGO
+   → KANAN
+========================================== */
+
+.banner .ksr-logo {
+    position: absolute !important;
+
+    top: 130px !important;
+    right:100px !important;
+    left: auto !important;
+
+    width:  150px !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
 
     object-fit: contain !important;
 
-    z-index: 10;
+    z-index: 30 !important;
+}
+
+
+/* ==========================================
+   TAGLINE
+   → BAWAH KIRI
+========================================== */
+
+.banner .tagline {
+    position: absolute !important;
+
+    left: 75px !important;
+    right: auto !important;
+
+    top: auto !important;
+    bottom: 70px !important;
+
+    margin: 0 !important;
+
+    color: white !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: clamp(20px, 2.2vw, 34px) !important;
+
+    font-weight: 700 !important;
+
+    text-align: left !important;
+
+    white-space: nowrap !important;
+
+    text-shadow:
+        3px 4px 6px rgba(0,0,0,0.65) !important;
+
+    z-index: 20 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .banner {
+        height: calc(100vh - 60px) !important;
+        min-height: 600px !important;
+    }
+
+    .banner .top-logo {
+        top: 15px !important;
+        width: 330px !important;
+        max-width: 75vw !important;
+    }
+
+    .banner .welcome {
+        top: 105px !important;
+        font-size: 30px !important;
+    }
+
+    .banner .title-area {
+        top: 185px !important;
+    }
+
+    .banner .kolej {
+        font-size: 75px !important;
+        transform: translateX(-15px) !important;
+    }
+
+    .banner .rajang {
+        font-size: 68px !important;
+        transform: translateX(15px) !important;
+    }
+
+    .banner .ksr-logo {
+        top: 260px !important;
+        right: 20px !important;
+        width: 110px !important;
+    }
+
+    .banner .tagline {
+        left: 25px !important;
+        bottom: 35px !important;
+        font-size: 18px !important;
+    }
+}
+.banner .explore-btn {
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 35px !important;
+
+    transform: translateX(-50%) !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 16px 42px !important;
+
+    background: #b30000 !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 35px !important;
+
+    font-size: 18px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.35) !important;
+
+    z-index: 50 !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+
+/* Hover */
+
+.banner .explore-btn:hover {
+    transform: translateX(-50%) translateY(-4px) !important;
+
+    background: #8f0000 !important;
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.4) !important;
 }
